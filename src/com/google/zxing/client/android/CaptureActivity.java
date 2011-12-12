@@ -492,7 +492,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     TextView contentsTextView = (TextView) findViewById(R.id.contents_text_view);
     CharSequence displayContents = resultHandler.getDisplayContents();
     //displayContents += "\n-한양대 임베디드시스템 미아방지 프로젝트-";
-    String str = displayContents.toString() + "\n\n\n\n-한양대 임베디드시스템 미아방지 프로젝트-";
+    String str = displayContents.toString();
     contentsTextView.setText(str);
     // Crudely scale betweeen 22 and 32 -- bigger font for shorter text
     int scaledSize = Math.max(22, 32 - displayContents.length() / 4);
