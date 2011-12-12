@@ -153,7 +153,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     Window window = getWindow();
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     setContentView(R.layout.capture);
-
+    
     CameraManager.init(getApplication());
     viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
     resultView = findViewById(R.id.result_view);
@@ -491,7 +491,9 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
     TextView contentsTextView = (TextView) findViewById(R.id.contents_text_view);
     CharSequence displayContents = resultHandler.getDisplayContents();
-    contentsTextView.setText(displayContents);
+    //displayContents += "\n-한양대 임베디드시스템 미아방지 프로젝트-";
+    String str = displayContents.toString() + "\n\n\n\n-한양대 임베디드시스템 미아방지 프로젝트-";
+    contentsTextView.setText(str);
     // Crudely scale betweeen 22 and 32 -- bigger font for shorter text
     int scaledSize = Math.max(22, 32 - displayContents.length() / 4);
     contentsTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, scaledSize);
